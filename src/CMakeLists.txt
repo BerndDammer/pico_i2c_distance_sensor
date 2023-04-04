@@ -34,6 +34,11 @@ target_sources(vl53l4cd PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/loop.c
         ${CMAKE_CURRENT_LIST_DIR}/blinker.c
         ${CMAKE_CURRENT_LIST_DIR}/Examples/Example_1_ranging_basic.c
+        ${CMAKE_CURRENT_LIST_DIR}/Examples/Example_2_low_power.c
+        ${CMAKE_CURRENT_LIST_DIR}/Examples/Example_3_high_accuracy.c
+        ${CMAKE_CURRENT_LIST_DIR}/Examples/Example_4_fast_ranging.c
+#        ${CMAKE_CURRENT_LIST_DIR}/Examples/Example_6_detection_thresholds.c
+        ${CMAKE_CURRENT_LIST_DIR}/Examples/Example_1_ranging_basic.c
         ${CMAKE_CURRENT_LIST_DIR}/Platform/platform.c
         ${CMAKE_CURRENT_LIST_DIR}/Platform/platform_adapt.c	
         ${CMAKE_CURRENT_LIST_DIR}/VL53L4CD_ULD_Driver/VL53L4CD_api.c

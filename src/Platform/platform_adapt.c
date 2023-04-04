@@ -10,7 +10,8 @@
 #define SCL 3
 #define SDA 2
 
-#define CLK (100 * 1000)
+//#define CLK (100 * 1000)
+#define CLK (1000 * 1000)
 #define I2C (i2c1)
 #define I2C_TIMEOUT_MS 5
 #define I2C_ADDR 0X29 // 0X52/2
