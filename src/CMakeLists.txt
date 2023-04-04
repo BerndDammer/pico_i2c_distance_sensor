@@ -11,6 +11,12 @@ include(pico_sdk_import.cmake)
 
 project(vl53l4cd C CXX ASM)
 
+include_directories(
+        ${PROJECT_SOURCE_DIR}/VL53L4CD_ULD_Driver
+        ${PROJECT_SOURCE_DIR}/Platform
+        ${PROJECT_SOURCE_DIR}/Examples
+)
+
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
@@ -27,14 +33,14 @@ target_sources(vl53l4cd PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/main.c
         ${CMAKE_CURRENT_LIST_DIR}/loop.c
         ${CMAKE_CURRENT_LIST_DIR}/blinker.c
-        ${CMAKE_CURRENT_LIST_DIR}/vl53l4cd.c
+        ${CMAKE_CURRENT_LIST_DIR}/Examples/Example_1_ranging_basic.c
+        ${CMAKE_CURRENT_LIST_DIR}/Platform/platform.c
+        ${CMAKE_CURRENT_LIST_DIR}/Platform/platform_adapt.c	
+        ${CMAKE_CURRENT_LIST_DIR}/VL53L4CD_ULD_Driver/VL53L4CD_api.c
         )
 
-# Add the standard library to the build
-target_link_libraries(vl53l4cd pico_stdlib)
-
-# Add any user requested libraries
-target_link_libraries(vl53l4cd
+target_link_libraries(vl53l4cd 
+	pico_stdlib
 	hardware_timer
 	hardware_i2c
 )
